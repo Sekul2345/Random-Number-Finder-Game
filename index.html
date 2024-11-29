@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Game</title>
+    <link rel="stylesheet" href="index.css">
+    <h1>Random Number Finder Game</h1>
+</head>
+<body>
+    <input id="guessnumber">Enter Number:
+    <br></br>
+    <button onclick="val()">Click</button>
+    <h1 id="result">Wrong Or Right</h1>
+    <h2 id="score">Score:10</h2>
+
+    <script>
+        let guessnumber=document.getElementById("guessnumber")
+        console.log(typeof(guessnumber));
+        
+        let result=document.getElementById("result")
+        let randomVal=Math.floor(Math.random()*10)+1
+        var totalscore=10
+        console.log(randomVal);
+        console.log(typeof(randomVal))
+        
+        function val(){
+            var enternum=guessnumber.value
+            if(randomVal==enternum){
+                result.textContent="Right"
+                alert("You Won...")
+            }
+            else{
+                totalscore-=1
+                score.textContent="Score"+totalscore
+                result.textContent="Wrong"
+                alert("You Are Looser")
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
